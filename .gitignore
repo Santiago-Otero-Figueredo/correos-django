@@ -1,0 +1,29 @@
+# Entorno virtual
+venv/
+env/
+.venv/
+
+# Variables de entorno
+.env
+
+# Credenciales OAuth (nunca subir al repo)
+credentials/oauth2.json
+credentials/oauth_token.json
+credentials/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Django
+*.log
+db.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
