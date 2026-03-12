@@ -15,7 +15,7 @@ from mailer.gmail_oauth import GmailOAuth
 # VARIABLES DE PRUEBA - Edita estos valores
 # ============================================================
 
-TO = "sebastianmarulandapsg@gmail.com"
+TO = "correoprueba@gmail.com"
 NOMBRE = "Usuario"
 SUBJECT = "Correo de prueba - Django"
 
