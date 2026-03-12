@@ -3,7 +3,7 @@
     xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-    <title>Solicitud de revisión para publicación del semillero</title><!--[if !mso]><!-->
+    <title>Respuesta a la solicitud de modificación del semillero:{{nombre_semillero}}</title><!--[if !mso]><!-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--<![endif]-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -150,13 +150,13 @@
                                                             <td align="left"
                                                                 style="font-size:0px;padding:10px 25px;padding-top:5px;padding-bottom:5px;word-break:break-word;">
                                                                 <div
-                                                                    style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
+                                                                    style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;text-align:center;color:#000000;">
                                                                     <p class="text-build-content"
                                                                         style="text-align: center; margin: 10px 0; margin-top: 5px; margin-bottom: 5px;"
                                                                         data-testid="eYnG3B5Y9JOL"><span
-                                                                            style="color:#ff6366;font-family:Arial;font-size:32px;line-height:38px;">Solicitud
-                                                                            de revisión para publicación del
-                                                                            semillero <b>{{nombre_semillero}}</b></span>
+                                                                            style="color:#ff6366;font-family:Arial;font-size:35px;line-height:45px;">Respuesta
+                                                                            a la solicitud de modificación del
+                                                                            semillero: <b>{{nombre_semillero}}</b></span>
                                                                     </p>
                                                                 </div>
                                                             </td>
@@ -173,50 +173,17 @@
                                                             <td align="left"
                                                                 style="background:#ffffff;font-size:0px;padding:15px 25px 0 25px;padding-top:15px;padding-right:25px;padding-bottom:0px;padding-left:25px;word-break:break-word;">
                                                                 <div
-                                                                    style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
+                                                                    style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1.5;text-align:justify;color:#000000;">
                                                                     <p class="text-build-content"
-                                                                        style="text-align: justify; margin: 10px 0; line-height: 22px;"
-                                                                        data-testid="PH2o376ba6dJ">
-                                                                        <span style="color:#000000; font-size: 14px;">
-                                                                            Reciba un cordial saludo. El Programa
-                                                                            Semilleros IDiCA se permite informarle que
-                                                                            el profesor <b>{{ nombre_docente }}</b>
-                                                                            adscrito a <b>{{ unidad_academica }}</b> de
-                                                                            la Facultad <b>{{ nombre_facultad }}</b>
-                                                                            envió para determinación de aval por parte
-                                                                            del Comité de Investigaciones de la Facultad
-                                                                            de <b>{{ nombre_facultad_semillero }}</b> la
-                                                                            creación del semillero
-                                                                            <b>{{nombre_semillero}}</b>, de acuerdo con
-                                                                            lo que indica la Resolución del Consejo
-                                                                            Superior No. 050 de 2022 artículo 7. Una vez
-                                                                            el Comité determine el aval se requiere que
-                                                                            usted ingrese al sistema de información e
-                                                                            indique si el semillero es avalado o no para
-                                                                            su publicación en el catálogo de los
-                                                                            Semilleros IDiCA de la universidad.
-                                                                        </span>
-                                                                    </p>
-                                                                    <p class="text-build-content"
-                                                                        style="text-align: justify; margin: 20px 0; line-height: 22px;"
-                                                                        data-testid="PH2o376ba6dJ">
-                                                                        <span style="color:#000000; font-size: 14px;">
-                                                                            En el siguiente enlace se encuentra el
-                                                                            instructivo para proceder con el aval de la
-                                                                            vicedecanatura correspondiente para la
-                                                                            aceptación del semillero:<br>
-                                                                            <a href="#"
-                                                                                style="color: #0000EE; text-decoration: underline;">Aval
-                                                                                de Vicedecanatura a semilleros
-                                                                                nuevos</a>
-                                                                        </span>
-                                                                    </p>
-                                                                    <p class="text-build-content"
-                                                                        style="text-align: justify; margin: 10px 0; line-height: 22px;"
-                                                                        data-testid="PH2o376ba6dJ">
-                                                                        <span style="color:#000000; font-size: 14px;">
-                                                                            El detalle del semillero puede ser
-                                                                            consultado en el sistema de información.
+                                                                        style="margin: 10px 0;">
+                                                                        <span style="color:#575757; font-size: 14px;">
+                                                                            La Vicedecanatura de Investigaciones de la
+                                                                            <b>{{ nombre_facultad }}</b>, revisó la
+                                                                            solicitud de modificación del semillero
+                                                                            <b>{{ nombre_semillero }}</b> y las
+                                                                            modificaciones tienen como estado <b>{{estado}}</b>. El semillero se encuentra
+                                                                            actualizado en el catálogo de los semilleros
+                                                                            de acuerdo con las aprobaciones realizadas.
                                                                         </span>
                                                                     </p>
                                                                 </div>
@@ -249,12 +216,13 @@
                                                                 style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                                                 <div
                                                                     style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
-                                                                    <p
-                                                                        style="text-align: center; color: #575757; font-size: 12px;">
+                                                                    <p class="text-build-content"
+                                                                        style="text-align: left; color: #575757; font-size: 12px; margin: 10px 0;">
                                                                         Si presenta alguna dificultad para el ingreso o
                                                                         manejo del sistema de información por favor
-                                                                        reportelo al correo de soporte técnico:
-                                                                        <b>soporte@danalyticspro.co</b>
+                                                                        reportelo al correo de soporte técnico: <b><a
+                                                                                href="mailto:soporte@danalyticspro.co"
+                                                                                style="color: #0044CC; text-decoration: none;">soporte@danalyticspro.co</a></b>
                                                                     </p>
                                                                 </div>
                                                             </td>
@@ -299,7 +267,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td align="left"
-                                                                style="font-size:0px;padding:10px 25px 0 25px;padding-top:10px;padding-right:25px;padding-bottom:0px;padding-left:25px;word-break:break-word;">
+                                                                style="font-size:0px;padding:10px 25px 0 25px;padding-top:10px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
                                                                 <div
                                                                     style="font-family:Arial, sans-serif;font-size:13px;letter-spacing:normal;line-height:1;text-align:left;color:#000000;">
                                                                     <p class="text-build-content"
@@ -309,42 +277,10 @@
                                                                                 nuestro correo como contacto para que no
                                                                                 te lleguen las notificaciones del
                                                                                 sistema a spam o correo no
-                                                                                deseado</b></span></p>
-                                                                    <p class="text-build-content"
-                                                                        style="text-align: center; margin: 10px 0; margin-bottom: 10px;"
-                                                                        data-testid="bHTtC2jz9j">&nbsp;</p>
+                                                                                deseado.</b></span></p>
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div><!--[if mso | IE]></td></tr></table><![endif]-->
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" role="presentation" style="width:600px;" width="600" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
-        <div style="background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
-                style="background:#ffffff;background-color:#ffffff;width:100%;">
-                <tbody>
-                    <tr>
-                        <td style="direction:ltr;font-size:0px;padding:0 bridge 0 0;text-align:center;">
-                            <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" ><![endif]-->
-                            <div class="mj-column-per-100 mj-outlook-group-fix"
-                                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                                <table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">
-                                    <tbody>
-                                        <tr>
-                                            <td style="vertical-align:top;padding:0 0 0 0;">
-                                                <table border="0" cellpadding="0" cellspacing="0" role="presentation"
-                                                    width="100%">
-                                                    <tbody>
                                                         <tr>
                                                             <td align="center"
                                                                 style="font-size:0px;padding:10px 25px;padding-top:10px;padding-bottom:10px;word-break:break-word;">
@@ -364,7 +300,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div><!--[if mso | IE]></td></tr></table><![endif]-->
+        </div>
     </div>
 </body>
 
