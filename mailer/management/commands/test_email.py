@@ -17,11 +17,11 @@ from mailer.gmail_oauth import GmailOAuth
 
 TO = "correoprueba@gmail.com"
 NOMBRE = "Usuario"
-SUBJECT = "Correo de prueba - Django"
+SUBJECT = "Notificación de Bajo Rendimiento - Acompaña-T"
 
 # Carpeta del template a usar. Opciones:
 #   01_tesis | 02_semilleros | 03_acompañate | 04_curriculos | 99_otros
-TEMPLATE_FOLDER = "01_tesis"
+TEMPLATE_FOLDER = "03_acompañate"
 TEMPLATE_NAME = "5668329_Notificaciones_Dexia.html"
 
 
