@@ -15,14 +15,14 @@ from mailer.gmail_oauth import GmailOAuth
 # VARIABLES DE PRUEBA - Edita estos valores
 # ============================================================
 
-TO = "correo.prueba@gmail.com"
+TO = "correoprueba@gmail.com"
 NOMBRE = "Usuario"
 SUBJECT = "Correo de prueba - Django"
 
 # Carpeta del template a usar. Opciones:
 #   01_tesis | 02_semilleros | 03_acompañate | 04_curriculos | 99_otros
 TEMPLATE_FOLDER = "01_tesis"
-TEMPLATE_NAME = "prueba.html"
+TEMPLATE_NAME = "5668329_Notificaciones_Dexia.html"
 
 
 # ============================================================
@@ -33,16 +33,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.stdout.write(f"Preparando correo para: {TO}")
 
-        context = {
-            "nombre": NOMBRE,
-            "mensaje": "Este es un correo de prueba enviado desde Django usando Gmail API con OAuth 2.0.",
-            "items": [
-                "Autenticacion: OAuth 2.0 Client ID",
-                "Framework: Django",
-                "API: Gmail API v1",
-                "Template: Django Templates",
-            ],
-        }
+        context = {}
 
         html = render_to_string(f"email/{TEMPLATE_FOLDER}/{TEMPLATE_NAME}", context)
 
