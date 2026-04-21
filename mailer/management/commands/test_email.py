@@ -15,7 +15,7 @@ from mailer.gmail_oauth import GmailOAuth
 # VARIABLES DE PRUEBA - Edita estos valores
 # ============================================================
 
-TO = "sebastianmarulandapsg@gmail.com"
+TO = "test@example.com"
 
 TEMPLATES = [
     {
