@@ -15,44 +15,94 @@ from mailer.gmail_oauth import GmailOAuth
 # VARIABLES DE PRUEBA - Edita estos valores
 # ============================================================
 
-TO = "correo.prueba@gmail.com"
-NOMBRE = "Usuario"
-SUBJECT = "Correo de prueba - Django"
+TO = "test@example.com"
 
-# Carpeta del template a usar. Opciones:
-#   01_tesis | 02_semilleros | 03_acompañate | 04_curriculos | 99_otros
-TEMPLATE_FOLDER = "01_tesis"
-TEMPLATE_NAME = "prueba.html"
-
+TEMPLATES = [
+    {
+        "subject": "Bienvenida - Plataforma de gestión de tesis",
+        "template": "email/01_tesis/4166489_DAnalytics_Education_Bienvenida_UV.html",
+        "context": {
+            "fullname": "Usuario",
+            "articulo_nombre": "la",
+            "entidad": "Universidad del Valle - Facultad de Ingeniería",
+            "dominio": "https://univalle.danalytics-education.com/usuarios/acceso-por-correo",
+        },
+    },
+    {
+        "subject": "Recordatorio Jurados - Plataforma de gestión de tesis",
+        "template": "email/01_tesis/4952275_DAnalytics_Education_Base_UV_ACCESO_DIRECTO_RECORDATORIO_JURADOS.html",
+        "context": {
+            "fullname": "Usuario",
+            "articulo_nombre": "La",
+            "entidad": "Universidad del Valle - Facultad de Ingeniería",
+            "evento": "Evaluación de propuesta de trabajo de grado - Ingeniería de Sistemas",
+            "url": "https://univalle.danalytics-education.com/usuarios/acceso-por-correo",
+        },
+    },
+    {
+        "subject": "Indicadores Semanales - Plataforma de gestión de tesis",
+        "template": "email/01_tesis/4814302_DAnalytics_Education_Base_UV_INDICADORES_SEMANALES.html",
+        "context": {
+            "fullname": "Usuario",
+            "fecha": "20 de abril de 2026",
+            "entidad": "Universidad del Valle - Facultad de Ingeniería",
+            "numero_total": "Total de trabajos pendientes: 3",
+            "evento": [
+                {
+                    "programa": "Ingeniería de Sistemas",
+                    "nombre": "Propuestas por revisar",
+                    "valor": "5",
+                    "codigo": "TG-2026-001"
+                },
+                {
+                    "programa": "Ingeniería Industrial",
+                    "nombre": "Sustentaciones pendientes",
+                    "valor": "2",
+                    "codigo": "TG-2026-015"
+                },
+                {
+                    "programa": "Ingeniería Eléctrica",
+                    "nombre": "Jurados por asignar",
+                    "valor": "12",
+                    "codigo": "TG-2026-023"
+                }
+            ],
+            "url": "https://univalle.danalytics-education.com/usuarios/acceso-por-correo",
+        },
+    },
+    {
+        "subject": "Carta Jurado - Plataforma de gestión de tesis",
+        "template": "email/01_tesis/4427808_DAnalytics_Education_Base_UV_CARTA_JURADO.html",
+        "context": {
+            "url": "https://univalle.danalytics-education.com/usuarios/acceso-por-correo",
+        },
+    },
+]
 
 # ============================================================
 
 class Command(BaseCommand):
-    help = "Envia un correo de prueba usando Gmail API OAuth 2.0"
+    help = "Envia correos de prueba usando Gmail API OAuth 2.0"
 
     def handle(self, *args, **options):
-        self.stdout.write(f"Preparando correo para: {TO}")
+        gmail = GmailOAuth()
+        enviados = 0
+        errores = 0
 
-        context = {
-            "nombre": NOMBRE,
-            "mensaje": "Este es un correo de prueba enviado desde Django usando Gmail API con OAuth 2.0.",
-            "items": [
-                "Autenticacion: OAuth 2.0 Client ID",
-                "Framework: Django",
-                "API: Gmail API v1",
-                "Template: Django Templates",
-            ],
-        }
+        for tpl in TEMPLATES:
+            self.stdout.write(f"\nEnviando: {tpl['subject']}")
+            try:
+                html = render_to_string(tpl["template"], tpl["context"])
+                message_id = gmail.enviar(to=TO, subject=tpl["subject"], html=html)
+                self.stdout.write(
+                    self.style.SUCCESS(f"  [OK] Enviado. ID: {message_id}")
+                )
+                enviados += 1
+            except Exception as e:
+                self.stdout.write(
+                    self.style.ERROR(f"  [FAIL] Error: {e}")
+                )
+                errores += 1
 
-        html = render_to_string(f"email/{TEMPLATE_FOLDER}/{TEMPLATE_NAME}", context)
+        self.stdout.write(f"\nResumen: {enviados} enviados, {errores} errores")
 
-        try:
-            gmail = GmailOAuth()
-            message_id = gmail.enviar(to=TO, subject=SUBJECT, html=html)
-            self.stdout.write(
-                self.style.SUCCESS(f"Correo enviado exitosamente. ID: {message_id}")
-            )
-        except FileNotFoundError as e:
-            raise CommandError(str(e))
-        except Exception as e:
-            raise CommandError(f"Error al enviar el correo: {e}")
