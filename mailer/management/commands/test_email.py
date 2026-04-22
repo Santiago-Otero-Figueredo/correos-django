@@ -16,12 +16,12 @@ from mailer.gmail_oauth import GmailOAuth
 # ============================================================
 
 TO = "hinatadeross@gmail.com"
-SUBJECT = "Recordatorio Calificación Currículo"
+SUBJECT = "Notificación de Sistema - Universidad del Valle"
 
 # Carpeta del template a usar. Opciones:
 #   01_tesis | 02_semilleros | 03_acompañate | 04_curriculos | 99_otros
-TEMPLATE_FOLDER = "04_curriculos"
-TEMPLATE_NAME = "7226576_Recordatorio_Calificacion_Curriculo.html"
+TEMPLATE_FOLDER = "01_tesis"
+TEMPLATE_NAME = "3665005_DAnalytics_Education_Plantilla_Base.html"
 
 
 # ============================================================
@@ -33,7 +33,11 @@ class Command(BaseCommand):
         self.stdout.write(f"Preparando correo para: {TO}")
 
         context = {
-            "fecha_limite": "mañana, 14 de agosto de 2025"
+            "siglas": "PGT",
+            "asunto": "Actualización del Sistema de Gestión de Tesis",
+            "evento": "Se han abierto las inscripciones para el nuevo período académico",
+            "dominio": "https://tesis.univalle.edu.co/",
+            "entidad": "Escuela de Ingeniería Eléctrica y Electrónica - Universidad del Valle"
         }
 
         html = render_to_string(f"email/{TEMPLATE_FOLDER}/{TEMPLATE_NAME}", context)
